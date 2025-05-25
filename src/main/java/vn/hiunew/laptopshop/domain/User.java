@@ -1,24 +1,22 @@
 package vn.hiunew.laptopshop.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String email;
     private String password;
-    private String fullname;
+    private String fullName;
     private String address;
     private String phone;
-
-    public User() {
-    }
-
-    public User(long id, String email, String password, String fullname, String address, String phone) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.fullname = fullname;
-        this.address = address;
-        this.phone = phone;
-    }
 
     public long getId() {
         return id;
@@ -45,11 +43,11 @@ public class User {
     }
 
     public String getFullname() {
-        return fullname;
+        return fullName;
     }
 
     public void setFullname(String fullname) {
-        this.fullname = fullname;
+        this.fullName = fullname;
     }
 
     public String getAddress() {
@@ -75,7 +73,7 @@ public class User {
         sb.append("id=").append(id);
         sb.append(", email=").append(email);
         sb.append(", password=").append(password);
-        sb.append(", fullname=").append(fullname);
+        sb.append(", fullname=").append(fullName);
         sb.append(", address=").append(address);
         sb.append(", phone=").append(phone);
         sb.append('}');
